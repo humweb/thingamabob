@@ -56,4 +56,6 @@ class Widgets implements WidgetManager
     {
         return isset($this->widgets[$widget]);
     }
+
+
 }

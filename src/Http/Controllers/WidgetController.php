@@ -42,4 +42,6 @@ class WidgetController extends Controller
     {
         return $manager->all();
     }
+
+
 }

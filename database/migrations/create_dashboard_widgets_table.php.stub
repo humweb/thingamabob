@@ -8,12 +8,14 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('migration_table_name_table', function (Blueprint $table) {
+        Schema::create('dashboard_widgets', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->unsignedInteger('user_id')->index();
+            $table->string('name')->default('default');
+            $table->jsonb('widgets');
             $table->timestamps();
+
+            $table->unique(['user_id', 'name']);
         });
     }
 };
