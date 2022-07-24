@@ -6,7 +6,6 @@ use Humweb\Thingamabob\Exceptions\WidgetNotFound;
 
 interface WidgetManager
 {
-
     /**
      * @param  string  $widget
      *
