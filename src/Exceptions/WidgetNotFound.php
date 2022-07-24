@@ -1,4 +1,5 @@
 <?php
+
 namespace Humweb\Thingamabob\Exceptions;
 
 use Exception;

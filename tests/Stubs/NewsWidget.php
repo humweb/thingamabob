@@ -15,8 +15,8 @@ class NewsWidget extends AbstractWidget implements Widget
         return [
             'news' => [
                 ['title' => 'Breaking news'],
-                ['title' => 'Tonight at 11pm']
-            ]
+                ['title' => 'Tonight at 11pm'],
+            ],
         ];
     }
 }

@@ -18,10 +18,10 @@ class DashboardWidgets extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'widgets'
+        'widgets',
     ];
 
     protected $casts = [
-        'widgets' => 'array'
+        'widgets' => 'array',
     ];
 }

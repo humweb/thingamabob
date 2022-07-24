@@ -7,7 +7,6 @@ use Humweb\Thingamabob\Contracts\WidgetManager;
 use Humweb\Thingamabob\Exceptions\InvalidWidgetName;
 use Humweb\Thingamabob\Exceptions\WidgetNotFound;
 
-
 class Widgets implements WidgetManager
 {
     public array $widgets = [];
@@ -36,19 +35,18 @@ class Widgets implements WidgetManager
      */
     public function get(string $widget): Widget
     {
-        throw_if(!isset($this->widgets[$widget]), new WidgetNotFound('Widget "'.$widget.'" not found!'));
+        throw_if(! isset($this->widgets[$widget]), new WidgetNotFound('Widget "'.$widget.'" not found!'));
 
         return $this->widgets[$widget];
     }
-
 
     public function all(): array
     {
         return array_map(function ($key, $widget) {
             return [
-                'id'        => $key,
-                'title'     => $widget->getTitle(),
-                'component' => $widget->component
+                'id' => $key,
+                'title' => $widget->getTitle(),
+                'component' => $widget->component,
             ];
         }, array_keys($this->widgets), $this->widgets);
     }
@@ -57,6 +55,4 @@ class Widgets implements WidgetManager
     {
         return isset($this->widgets[$widget]);
     }
-
-
 }

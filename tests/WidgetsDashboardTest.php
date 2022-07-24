@@ -17,18 +17,17 @@ beforeEach(function () {
 
 it('can save default widget', function () {
     $this->dashboard->save(1, [
-        ['name' => 'news']
+        ['name' => 'news'],
     ]);
 
     $this->assertDatabaseHas('dashboard_widgets', [
         'user_id' => 1,
         'name' => 'default',
     ]);
-
 });
 it('can update default widget', function () {
     $this->dashboard->save(1, [
-        ['name' => 'news']
+        ['name' => 'news'],
     ]);
 
     $this->assertDatabaseHas('dashboard_widgets', [
@@ -38,24 +37,21 @@ it('can update default widget', function () {
 
     $this->dashboard->save(1, [
         ['name' => 'news'],
-        ['name' => 'stats']
+        ['name' => 'stats'],
     ]);
 
     $this->assertDatabaseCount('dashboard_widgets', 1);
     $dashboard = $this->dashboard->get(1, 'default');
     expect($dashboard->widgets[0])->toEqual(['name' => 'news']);
     expect($dashboard->widgets[1])->toEqual(['name' => 'stats']);
-
 });
 
 it('can get default dashboard widgets', function () {
     $this->dashboard->save(1, [
-        ['name' => 'news']
+        ['name' => 'news'],
     ]);
 
     $dashboard = $this->dashboard->get(1, 'default');
     expect($dashboard)->toBeInstanceOf(DashboardWidgets::class);
     expect($dashboard->widgets[0])->toEqual(['name' => 'news']);
-
 });
-

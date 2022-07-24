@@ -2,9 +2,9 @@
 
 namespace Humweb\Thingamabob\Tests;
 
+use Humweb\Thingamabob\ThingamabobServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Humweb\Thingamabob\ThingamabobServiceProvider;
 
 class TestCase extends Orchestra
 {
