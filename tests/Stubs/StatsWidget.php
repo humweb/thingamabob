@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class StatsWidget extends AbstractWidget implements Widget
 {
+    public string $title = 'Stats Count';
     public string $component = 'StatsWidget';
 
     public function data(Request $request): array

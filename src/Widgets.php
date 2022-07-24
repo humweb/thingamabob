@@ -47,6 +47,7 @@ class Widgets implements WidgetManager
         return array_map(function ($key, $widget) {
             return [
                 'id'        => $key,
+                'title'     => $widget->getTitle(),
                 'component' => $widget->component
             ];
         }, array_keys($this->widgets), $this->widgets);
