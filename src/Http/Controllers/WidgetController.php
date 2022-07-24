@@ -19,7 +19,7 @@ class WidgetController extends Controller
      * @param  WidgetManager  $manager
      * @param                 $widget
      *
-     * @return
+     * @return array
      */
     public function show(Request $request, WidgetManager $manager, $widget)
     {
@@ -36,7 +36,7 @@ class WidgetController extends Controller
     /**
      * @param  WidgetManager  $manager
      *
-     * @return
+     * @return array
      */
     public function widgetList(WidgetManager $manager)
     {

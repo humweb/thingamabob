@@ -2,13 +2,13 @@
 
 namespace Humweb\Thingamabob\Database\Factories;
 
-use Humweb\Thingamabob\WidgetsDashboard;
+use Humweb\Thingamabob\Models\DashboardWidgets;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 class WidgetsDashboardFactory extends Factory
 {
-    protected $model = WidgetsDashboard::class;
+    protected $model = DashboardWidgets::class;
 
     public function definition()
     {

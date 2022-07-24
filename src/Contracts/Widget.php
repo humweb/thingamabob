@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 interface Widget
 {
 
-    public function data(Request $request): array;
+    public function data(Request $request): mixed;
 
     public function getTitle(): string;
 }
