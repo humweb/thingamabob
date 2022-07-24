@@ -1,4 +1,5 @@
 <?php
+
 namespace Humweb\Thingamabob\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,10 +14,10 @@ class DashboardWidgets extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'widgets'
+        'widgets',
     ];
 
     protected $casts = [
-        'widgets' => 'array'
+        'widgets' => 'array',
     ];
 }

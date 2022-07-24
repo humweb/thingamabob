@@ -14,6 +14,7 @@ abstract class AbstractWidget
         if (empty($this->title)) {
             return Str::title(str_replace('_', ' ', Str::snake($this->component)));
         }
+
         return $this->title;
     }
 }

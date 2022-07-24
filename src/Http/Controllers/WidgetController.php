@@ -12,7 +12,9 @@ use Illuminate\Routing\Controller;
 
 class WidgetController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 
     /**
      * @param  Request        $request
@@ -27,8 +29,8 @@ class WidgetController extends Controller
             return $manager->get($widget)->data($request);
         } catch (WidgetNotFound $e) {
             return [
-                'status'  => 'error',
-                'message' => 'Widget not found!'
+                'status' => 'error',
+                'message' => 'Widget not found!',
             ];
         }
     }
@@ -42,6 +44,4 @@ class WidgetController extends Controller
     {
         return $manager->all();
     }
-
-
 }

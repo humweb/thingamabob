@@ -6,7 +6,6 @@ use Humweb\Thingamabob\Models\DashboardWidgets;
 
 class WidgetsDashboard
 {
-
     /**
      * @param  int     $userId
      * @param  array   $widgets

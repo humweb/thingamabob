@@ -32,8 +32,8 @@ it('can list widget', function () {
     Widgets::register('news', new NewsWidget());
     $response = $this->get(route('widgets.list'))->assertJsonStructure([
         '*' => [
-            'id', 'component'
-        ]
+            'id', 'component',
+        ],
     ]);
 });
 
@@ -42,7 +42,7 @@ it('can return data from controller', function () {
     $response = $this->get(route('widgets.show', 'news'))->assertJsonStructure([
         'news' => [
             '*' => ['title'],
-        ]
+        ],
     ]);
 });
 
@@ -50,7 +50,7 @@ it('can return error when widget not found', function () {
     Widgets::register('news', new NewsWidget());
     $response = $this->get(route('widgets.show', 'blog'))->assertJsonStructure([
         'status',
-        'message'
+        'message',
     ]);
 });
 
