@@ -1,19 +1,10 @@
-# This is my package thingamabob
+# Thingamabob Widget Manager
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/humweb/thingamabob.svg?style=flat-square)](https://packagist.org/packages/humweb/thingamabob)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/humweb/thingamabob/run-tests?label=tests)](https://github.com/humweb/thingamabob/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/humweb/thingamabob/Check%20&%20fix%20styling?label=code%20style)](https://github.com/humweb/thingamabob/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/humweb/thingamabob.svg?style=flat-square)](https://packagist.org/packages/humweb/thingamabob)
+[![run-tests](https://github.com/humweb/thingamabob/actions/workflows/run-tests.yml/badge.svg)](https://github.com/humweb/thingamabob/actions/workflows/run-tests.yml)
+[![PHPStan](https://github.com/humweb/thingamabob/actions/workflows/phpstan.yml/badge.svg)](https://github.com/humweb/thingamabob/actions/workflows/phpstan.yml)
+[![Check & fix styling](https://github.com/humweb/thingamabob/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/humweb/thingamabob/actions/workflows/php-cs-fixer.yml)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/thingamabob.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/thingamabob)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
@@ -40,20 +31,32 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'route' => '/api/widgets',
+    'middleware' => [],
+    'assets_path' => resource_path('js/widgets/'),
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="thingamabob-views"
 ```
 
 ## Usage
 
+#### Register new widget
 ```php
-$thingamabob = new Humweb\Thingamabob();
-echo $thingamabob->echoPhrase('Hello, Humweb!');
+Widgets::resgister('stats', new StatsWiget());
+```
+<br>
+
+#### Writing a widget
+```php
+class UserWidget extends AbstractWidget implements Widget
+{
+    public string $title = 'Users';
+    public string $component = 'UserWidget';
+
+    public function data(Request $request): Collection
+    {
+       return User::take(5)->get();
+    }
+}
 ```
 
 ## Testing
