@@ -24,9 +24,9 @@ class ThingamabobServiceProvider extends PackageServiceProvider
     public function boot()
     {
         parent::boot();
-//        $this->publishes([
-//            $this->package->basePath('/../resources/js') => resource_path("js/widgets/{$this->package->shortName()}"),
-//        ], "{$this->package->shortName()}-assets");
+        //        $this->publishes([
+        //            $this->package->basePath('/../resources/js') => resource_path("js/widgets/{$this->package->shortName()}"),
+        //        ], "{$this->package->shortName()}-assets");
     }
 
     public function register()
